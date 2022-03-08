@@ -1,89 +1,58 @@
-import {  ThemeComponents as ThemeProps, ComponentMultiStyleConfig as MultiStyleConfig   }from '@chakra-ui/react'
-import { mode } from '@chakra-ui/theme-tools'
-import { textStyles } from '../theme/textStyles'
+import {
+  ThemeComponents as ThemeProps,
+  ComponentMultiStyleConfig as MultiStyleConfig,
+} from "@chakra-ui/react"
+import { mode } from "@chakra-ui/theme-tools"
+import Header from "./header"
 
-const IconButton: MultiStyleConfig  = {
-  parts:['SwitchIcon', 'MobileMenu'],
+const IconButton: MultiStyleConfig = {
+  parts: ["_Box"],
   baseStyle: (props) => ({
-    SwitchIcon: {
-      color: mode('black', 'white')(props),
-      ml: {base: '0', md: '3'},
-      fontSize:'lg',
+    _Box: {
+      bgColor: "aquamarine",
     },
-    MobileMenu: {
-    display: {base: 'flex', md: 'none'},
-    fontSize:'20px',
-    color: mode('gray.800', 'inherit')(props),
-  }
   }),
-        }
+}
 
-const Card: MultiStyleConfig  = {
-  parts:['Card', 'BoxItem', 'TextItem'],
-  baseStyle: (props) => ({
-    Card: {
-      boxShadow: 'lg',
-      rounded: 'lg',
-      flexDirection: 'column',
-      p: '.7rem',
-      bgColor: mode("aquamarine.500", "aquamarine.600")(props),
-    
-    },
-    BoxItem: {
-      textStyle: 'aqua',
-      color: 'gray.600',
-      _hover: {color: mode("aquamarine.600", "white")(props)}
-    },
-
-  }),
+const Button = {
+  baseStyle: {
+    fontWeight: "bold",
+    textTransform: "uppercase",
+    borderRadius: "base",
+  },
   sizes: {
     sm: {
-      BoxItem: {
-        fontSize: '10rem',
-        px: 2,
-        py: 1,
-      },
- 
+      fontSize: "sm",
+      px: 4,
+      py: 3,
     },
     md: {
-      BoxItem: {
-        fontSize: '1rem',
-        px: 3,
-        py: 2, 
-      },
-
+      fontSize: "md",
+      px: 6,
+      py: 4,
     },
   },
   variants: {
-    aqua: (props) => ({
-    Card: {
-      bgColor:'#FFF'
+    outline: {
+      border: "2px solid",
+      borderColor: "purple.500",
+      color: "purple.500",
     },
-    BoxItem: {
-     textStyle:'aqua',
+    solid: {
+      bg: "purple.500",
+      color: "white",
     },
-
-   /*  BoxItem: {
-      margin:'0rem 0rem 0rem 0rem',
-      fontSize:"md",
-      _focus:{boxShadow: "none" },
-      _hover:{   bgGradient: 'aquamarine.900'},
-      },
-      */
-
-  }),
-  defaultProps: {
-   
   },
-}}
-
-
-
+  defaultProps: {
+    size: "md",
+    variant: "outline",
+  },
+}
 
 const components: ThemeProps = {
   IconButton,
-   Card
+  Header,
+  Button,
 }
-  
-  
-  export { components}
+
+export { components }

@@ -1,23 +1,17 @@
 import { Head, BlitzLayout } from "blitz"
-import Header from '../components/Header'
-import {Container} from '@chakra-ui/react'
+import Header from "../components/Header"
+import { Container } from "@chakra-ui/react"
 
-
-const Layout: BlitzLayout<{title?: string}> = ({ title, children }) => {
-
+const Layout: BlitzLayout<{ title?: string }> = ({ title, children }) => {
   return (
-    
-    <Container maxW='container.xl' cursor='none'>
-    <Header />
-
-    {children}
+    <Container maxW="container.xl" cursor="none">
+      {children}
       <Head>
         <title>{title || "nextgen-app"}</title>
         <link rel="icon" href="/favicon.ico" />
-      </Head>    
+      </Head>
     </Container>
   )
 }
 
 export default Layout
- 

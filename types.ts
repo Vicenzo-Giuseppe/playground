@@ -7,6 +7,7 @@ export type Role = "ADMIN" | "USER"
 declare module "blitz" {
   export interface Ctx extends DefaultCtx {
     session: SessionContext
+    whaleAlert: any
   }
   export interface Session {
     isAuthorized: SimpleRolesIsAuthorized<Role>

@@ -9,8 +9,8 @@ import {
 } from "blitz"
 import LoginForm from "app/auth/components/LoginForm"
 
-import  {ChakraProvider } from '../core/chakra-ui/ChakraProvider';
-import CustomCursor from "app/core/components/CustomCursor";
+import { ChakraProvider } from "../core/chakra-ui/ChakraProvider"
+import CustomCursor from "app/core/components/CustomCursor"
 
 export default function App({ Component, pageProps }: AppProps) {
   const getLayout = Component.getLayout || ((page) => page)
@@ -25,7 +25,7 @@ export default function App({ Component, pageProps }: AppProps) {
         {getLayout(<Component {...pageProps} />)}
       </ErrorBoundary>
     </ChakraProvider>
-  );
+  )
 }
 
 function RootErrorFallback({ error, resetErrorBoundary }: ErrorFallbackProps) {
@@ -45,5 +45,4 @@ function RootErrorFallback({ error, resetErrorBoundary }: ErrorFallbackProps) {
   }
 }
 
-
-export { getServerSideProps } from "../core/chakra-ui/ChakraProvider";
+export { getServerSideProps } from "../core/chakra-ui/ChakraProvider"
