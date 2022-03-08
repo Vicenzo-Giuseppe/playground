@@ -1,8 +1,8 @@
 import { useRouter } from "blitz"
 import Layout from "app/core/layouts/Layout"
-import { cursorAPI } from "../core/contexts/mouseAPI"
+
 import { Button } from "@chakra-ui/react"
-import { Fetch, getData } from "../core/hooks/api/useFetchData"
+import Fetch from "../core/hooks/api/useFetchData"
 import { useState } from "react"
 
 interface Coins {
@@ -35,14 +35,14 @@ interface Coins {
  */
 
 const Home = () => {
-  const data = getData<Coins[]>({
+  /*  const data = getData<Coins[]>({
     url: "https://api2.binance.com/api/v3/ticker/24hr",
   })
   console.log(
     data.then((data) => {
       data
     })
-  )
+  ) */
   return <div></div>
 }
 

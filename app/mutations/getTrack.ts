@@ -1,7 +1,7 @@
 import { Ctx } from "blitz"
 import db from "db"
 import * as z from "zod"
-import { Fetch } from "../core/hooks/api/useFetchData"
+import Fetch from "../core/hooks/api/useFetchData"
 const CreateProject = z
   .object({
     name: z.string(),
